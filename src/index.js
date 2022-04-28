@@ -1,43 +1,46 @@
-import _ from 'lodash';
+import _ from 'lodash';// eslint-disable-line
 import './index.css';
-
 
 const todos = [
   {
-    description: "HackerRank challenges",
+    description: 'HackerRank challenges',
     completed: false,
-    index:1,
+    index: 1,
   },
   {
-    description: "Codechef challenges",
+    description: 'Codechef challenges',
     completed: false,
-    index:2,
+    index: 2,
   },
   {
-    description: "Codewars challenges",
+    description: 'Codewars challenges',
     completed: true,
-    index:3,
+    index: 3,
   },
   {
-    description: "Toptal challenges",
+    description: 'Toptal challenges',
     completed: false,
-    index:4,
+    index: 4,
   },
-]
+];
 
-const getTodos = ()=>{
-  const listGroup = document.querySelector(".todo-list-group");
-   todos.map(item => {
-  const listElement = document.createElement('li');
-  listElement.classList = "todo-list todo-item";
-  listElement.innerHTML =`
-        <button type="button" class=${item.completed === true ? "checked-button" : "unchecked-button"}>
+const getTodos = () => {
+  const listGroup = document.querySelector('.todo-list-group');
+  todos.map((item) => {
+    const listElement = document.createElement('li');
+    listElement.classList = 'todo-list todo-item';
+    listElement.id = `${item.index}`;
+    listElement.innerHTML = `
+        <button type="button" class=${
+  item.completed === true ? 'checked-button' : 'unchecked-button'
+}>
         <i class="fa-solid fa-check"></i></button>
-        <input type="text" class=${item.completed === true ? "decoration" : "undecoration"}  value="${item.description}">
+        <input type="text" class=${
+  item.completed === true ? 'decoration' : 'undecoration'
+}  value="${item.description}">
         <span class="todo-item-more"><i class="fa-solid fa-ellipsis-vertical"></i></span>
-    `
-    listGroup.appendChild(listElement)
-      console.log(listGroup)
-  })
-}
-window.addEventListener('load',getTodos)
+    `;
+    return listGroup.appendChild(listElement);
+  });
+};
+window.addEventListener('load', getTodos);
