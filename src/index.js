@@ -1,5 +1,5 @@
 import _ from 'lodash';// eslint-disable-line
-import './index.css';
+import './style.css';
 
 const todos = [
   {
