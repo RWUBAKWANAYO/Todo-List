@@ -52,5 +52,5 @@ const deleteTodos = (targetIndex) => {
 };
 
 export {
- getTodos,addTodos,editTodos,deleteTodos
+  getTodos, addTodos, editTodos, deleteTodos,
 };

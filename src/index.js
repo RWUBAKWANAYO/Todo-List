@@ -1,7 +1,7 @@
 import _ from 'lodash';// eslint-disable-line
 import './style.css';
 import {
-  addTodos, deleteTodos, editTodos, getTodos
+  addTodos, deleteTodos, editTodos, getTodos,
 } from './ModifyTodos.js';
 
 const listGroup = document.querySelector('.todo-list-group');
