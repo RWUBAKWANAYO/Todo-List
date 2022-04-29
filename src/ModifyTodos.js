@@ -16,6 +16,10 @@ const getTodos = () => {
   listGroup.innerHTML = todoElement;
   return listGroup;
 };
+const updateUI = (data) => {
+  todos = data;
+  getTodos();
+};
 
 const addTodos = (event) => {
   if (newTask.value === '') return;
@@ -52,5 +56,5 @@ const deleteTodos = (targetIndex) => {
 };
 
 export {
-  getTodos, addTodos, editTodos, deleteTodos,
+  getTodos, addTodos, editTodos, deleteTodos, todos, updateUI,
 };
