@@ -23,7 +23,7 @@ const addTodos = (event) => {
     const newTodo = {
       description: newTask.value,
       completed: false,
-      index: todos.length,
+      index: todos.length + 1,
     };
     todos = [...todos, newTodo];
     localStorage.setItem('todos', JSON.stringify(todos));
