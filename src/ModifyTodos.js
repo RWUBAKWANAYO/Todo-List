@@ -31,7 +31,15 @@ const addTodos = (event) => {
   }
 };
 
+const editTodos = ({ index, event }) => {
+  if (event.target.value === '') return;
+  if (event.key === 'Enter') {
+    todos[index].description = event.target.value;
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }
+};
+
 
 export {
- getTodos,addTodos
+ getTodos,addTodos,editTodos
 };
