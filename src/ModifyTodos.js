@@ -39,7 +39,18 @@ const editTodos = ({ index, event }) => {
   }
 };
 
+const deleteTodos = (targetIndex) => {
+  const filterTodo = todos.filter((item) => +item.index !== +targetIndex);
+  const newTodos = filterTodo.map((item, index) => ({
+    description: item.description,
+    completed: item.completed,
+    index,
+  }));
+  localStorage.setItem('todos', JSON.stringify(newTodos));
+  todos = newTodos;
+  getTodos();
+};
 
 export {
- getTodos,addTodos,editTodos
+ getTodos,addTodos,editTodos,deleteTodos
 };
