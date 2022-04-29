@@ -17,8 +17,21 @@ const getTodos = () => {
   return listGroup;
 };
 
+const addTodos = (event) => {
+  if (newTask.value === '') return;
+  if (event.key === 'Enter' || event === 'clicked') {
+    const newTodo = {
+      description: newTask.value,
+      completed: false,
+      index: todos.length,
+    };
+    todos = [...todos, newTodo];
+    localStorage.setItem('todos', JSON.stringify(todos));
+    getTodos();
+  }
+};
 
 
 export {
- getTodos,
+ getTodos,addTodos
 };
