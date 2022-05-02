@@ -11,7 +11,7 @@
 
 ## Live Demo
 
-[http://localhost:8080/](http://localhost:8080//)
+Link to the live demo: [rwubakwanayo.github.io/Todo-List](https://rwubakwanayo.github.io/Todo-List/dist)
 
 ## Getting Started
 
