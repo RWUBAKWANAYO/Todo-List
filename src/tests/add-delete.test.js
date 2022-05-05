@@ -36,3 +36,17 @@ describe('By adding item in todos', () => {
   test(message.check, () => { expect(typeof addTodos).toBe('function'); });
   test(message.test, () => { expect(todos).toEqual(output); });
 });
+
+// Tests for Removing item in todo list
+describe('By removing item in todos', () => {
+  // Arrange
+  const message = {
+    check: 'check if removeItem is a function',
+    test: 'test if item removed from array',
+  };
+  // Act
+  deleteTodos(todos.length);
+  // Assert
+  test(message.check, () => { expect(typeof deleteTodos).toBe('function'); });
+  test(message.test, () => { expect(todos.length).toBe(2); });
+});
