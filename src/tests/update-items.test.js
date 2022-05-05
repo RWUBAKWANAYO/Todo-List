@@ -36,3 +36,15 @@ describe('By edit description of todo', () => {
   test(message.check, () => { expect(typeof editTodos).toBe('function'); });
   test(message.test, () => { expect(todos[1].description).toBe('updated item'); });
 });
+
+// Tests for remove item with completed status
+describe('By remove all completed tasks', () => {
+  // Arrange
+  const message = {
+    check: 'check if removeCompletedTodos is a function',
+    test: 'test completed task removed',
+  };
+  // Assert
+  test(message.check, () => { expect(typeof removeCompletedTodos).toBe('function'); });
+  test(message.test, () => { expect(removeCompletedTodos().length).toBe(1); });
+});
