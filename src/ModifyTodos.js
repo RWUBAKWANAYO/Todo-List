@@ -1,8 +1,8 @@
-let todos = JSON.parse(localStorage.getItem('todos')) || [];// eslint-disable-line
+const testFunc = ((a, b) => a + b);
+let todos = JSON.parse(localStorage.getItem('todos')) || []; // eslint-disable-line
 
-const listGroup = document.querySelector('.todo-list-group');
-const newTask = document.querySelector('.todo-add').querySelector('input');
 const getTodos = () => {
+  const listGroup = document.querySelector('.todo-list-group');
   const todoElement = todos.map((item) => `
         <li class="todo-list todo-item" id=${item.index}>
           ${item.completed === true ? `
@@ -17,44 +17,36 @@ const getTodos = () => {
   return listGroup;
 };
 const updateUI = (data) => {
-  todos = data;
+  if (data) todos = data;
   getTodos();
 };
 
-const addTodos = (event) => {
-  if (newTask.value === '') return;
-  if (event.key === 'Enter' || event === 'clicked') {
-    const newTodo = {
-      description: newTask.value,
-      completed: false,
-      index: todos.length + 1,
-    };
-    todos = [...todos, newTodo];
-    localStorage.setItem('todos', JSON.stringify(todos));
-    getTodos();
-  }
+const addTodos = (newTask) => {
+  const newTodo = {
+    description: newTask,
+    completed: false,
+    index: todos.length + 1,
+  };
+  todos.push(newTodo);
+  localStorage.setItem('todos', JSON.stringify(todos));
+  updateUI();
 };
 
-const editTodos = ({ index, event }) => {
-  if (event.target.value === '') return;
-  if (event.key === 'Enter') {
-    todos[index].description = event.target.value;
-    localStorage.setItem('todos', JSON.stringify(todos));
-  }
+const editTodos = ({ index, inputValue }) => {
+  todos[index - 1].description = inputValue;
+  localStorage.setItem('todos', JSON.stringify(todos));
 };
 
 const deleteTodos = (targetIndex) => {
-  const filterTodo = todos.filter((item) => +item.index !== +targetIndex);
-  const newTodos = filterTodo.map((item, index) => ({
-    description: item.description,
-    completed: item.completed,
-    index,
-  }));
+  const newTodos = todos.filter((item) => +item.index !== +targetIndex)
+    .map((item, index) => {
+      item.index = index + 1;
+      return item;
+    });
   localStorage.setItem('todos', JSON.stringify(newTodos));
-  todos = newTodos;
-  getTodos();
+  updateUI(newTodos);
 };
 
 export {
-  getTodos, addTodos, editTodos, deleteTodos, todos, updateUI,
+  getTodos, addTodos, editTodos, deleteTodos, todos, updateUI, testFunc,
 };

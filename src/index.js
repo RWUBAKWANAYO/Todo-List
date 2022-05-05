@@ -9,7 +9,13 @@ import { changeTodoStatus, removeCompletedTodos } from './TodoStatus.js';
 const listGroup = document.querySelector('.todo-list-group');
 const newTask = document.querySelector('.todo-add').querySelector('input');
 const submitIcon = document.querySelector('.todo-add').querySelector('i');
-newTask.addEventListener('keypress', (event) => addTodos(event));
+
+newTask.addEventListener('keypress', (event) => {
+  if (newTask.value === '') return;
+  if (event.key === 'Enter' || event === 'clicked') {
+    addTodos(newTask.value);
+  }
+});
 submitIcon.addEventListener('click', () => addTodos('clicked'));
 
 listGroup.addEventListener('click', (event) => {
@@ -23,7 +29,10 @@ listGroup.addEventListener('click', (event) => {
 listGroup.addEventListener('keypress', (event) => {
   const pressedItem = event.target.classList[event.target.classList.length - 1];
   const li = event.target.parentElement;
-  if (pressedItem === 'edit-todo') editTodos({ index: li.id, event });
+
+  if (pressedItem === 'edit-todo' && event.target.value !== '' && event.key === 'Enter') {
+    editTodos({ index: li.id, inputValue: event.target.value });
+  }
 });
 
 const clearCompleted = document.querySelector('.clear-todo');
