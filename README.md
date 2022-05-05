@@ -32,12 +32,22 @@ To get a local copy open and running follow these simple example steps.
 
 To get project open and running in your browser run `npm start` command which will start webpack-server.
 
+### Run the tests
+
+run: `npm test`
+
 ## Authors
 
-:bust_in_silhouette: **Author**
+👤 **Olivier Rwubakwanayo**
 
 - GitHub: [@githubrwubakwanayo](https://github.com/RWUBAKWANAYO)
 - LinkedIn: [Rwubakwanayo](https://www.linkedin.com/in/rwubakwanayo-olivier)
+
+👤 **Manel Hammouche**
+
+- GitHub: [@ha-manel](https://github.com/ha-manel)
+- Twitter: [@hamanel](https://twitter.com/ha_manel_)
+- LinkedIn: [Manel Hammouche](https://www.linkedin.com/in/manel-hammouche/)
 
 ## :handshake: Contributing
 
