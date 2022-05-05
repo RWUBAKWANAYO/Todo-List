@@ -4,9 +4,9 @@
   "description": "",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --runInBand",
     "start": "webpack serve --open",
-     "build": "webpack"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
     "eslint-plugin-import": "^2.26.0",
     "hint": "^6.1.12",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^28.0.3",
     "style-loader": "^3.3.1",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^21.0.0",
@@ -37,6 +38,8 @@
     "webpack-dev-server": "^4.8.1"
   },
   "dependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.17.9",
+    "jest-environment-jsdom": "^28.0.2",
     "lodash": "^4.17.21"
   }
 }
