@@ -15,16 +15,11 @@ describe('By adding item in todos', () => {
     check: 'check if addTodos is a function',
     test: 'test if new item added',
   };
-  const output = {
-    completed: false,
-    description: 'new item 1',
-    index: 1,
-  };
   // Act
   items.forEach((item) => addTodos(item));
   // Assert
   test(message.check, () => { expect(typeof addTodos).toBe('function'); });
-  test(message.test, () => { expect(todos[0]).toEqual(output); });
+  test(message.test, () => { expect(todos.length).not.toBe(0); });
 });
 
 // Tests for Removing item in todo list
