@@ -8,7 +8,7 @@ const getTodos = () => {
           ${item.completed === true ? `
             <i class="fa-solid fa-check checked-icon"></i>`
     : '<i class="fa-solid fa-square unchecked-icon"></i>'}
-          <input type="text" class=${item.completed === true ? 'decoration edit-todo' : ' edit-todo'}  value="${item.description}">
+          <input type="text" class=${item.completed === true ? 'decoration edit-todo' : 'edit-todo'}  value="${item.description}">
           <span class="edit-focus-element"></span>
           <i class="fa-solid fa-trash-can delete-icon"></i>
           <i class="fa-solid fa-ellipsis-vertical more-icon"></i>
@@ -29,7 +29,7 @@ const addTodos = (newTask) => {
   };
   todos.push(newTodo);
   localStorage.setItem('todos', JSON.stringify(todos));
-  updateUI();
+  getTodos();
 };
 
 const editTodos = ({ index, inputValue }) => {
@@ -38,13 +38,13 @@ const editTodos = ({ index, inputValue }) => {
 };
 
 const deleteTodos = (targetIndex) => {
-  const newTodos = todos.filter((item) => +item.index !== +targetIndex)
+  todos = todos.filter((item) => +item.index !== +targetIndex)
     .map((item, index) => {
       item.index = index + 1;
       return item;
     });
-  localStorage.setItem('todos', JSON.stringify(newTodos));
-  updateUI(newTodos);
+  localStorage.setItem('todos', JSON.stringify(todos));
+  getTodos();
 };
 
 export {
