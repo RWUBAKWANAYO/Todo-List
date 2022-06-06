@@ -29,8 +29,7 @@ listGroup.addEventListener('click', (event) => {
 listGroup.addEventListener('keypress', (event) => {
   const pressedItem = event.target.classList[event.target.classList.length - 1];
   const li = event.target.parentElement;
-
-  if (pressedItem === 'edit-todo' && event.target.value !== '' && event.key === 'Enter') {
+  if ((pressedItem === 'edit-todo' || pressedItem === 'decoration') && event.target.value !== '' && event.key === 'Enter') {
     editTodos({ index: li.id, inputValue: event.target.value });
   }
 });
