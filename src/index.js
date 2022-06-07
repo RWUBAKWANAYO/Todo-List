@@ -1,10 +1,11 @@
 import _ from 'lodash';// eslint-disable-line
 import './style.css';
-
+import logo from './assets/images/logo.png';
 import {
   addTodos, deleteTodos, editTodos, getTodos,
 } from './ModifyTodos.js';
 import { changeTodoStatus, removeCompletedTodos } from './TodoStatus.js';
+import DateConvention from './DateConvention.js';
 
 const listGroup = document.querySelector('.todo-list-group');
 const newTask = document.querySelector('.todo-add').querySelector('input');
@@ -16,7 +17,10 @@ newTask.addEventListener('keypress', (event) => {
     addTodos(newTask.value);
   }
 });
-submitIcon.addEventListener('click', () => addTodos('clicked'));
+submitIcon.addEventListener('click', () => {
+  if (newTask.value === '') return;
+  addTodos(newTask.value);
+});
 
 listGroup.addEventListener('click', (event) => {
   const clickedItem = event.target.classList[event.target.classList.length - 1];
@@ -37,4 +41,9 @@ listGroup.addEventListener('keypress', (event) => {
 const clearCompleted = document.querySelector('.clear-todo');
 clearCompleted.addEventListener('click', removeCompletedTodos);
 
-window.addEventListener('load', () => { getTodos(); });
+window.addEventListener('load', () => {
+  getTodos();
+  DateConvention();
+  document.getElementById('logo').src = logo;
+  document.getElementById('title-bar-logo').href = logo;
+});

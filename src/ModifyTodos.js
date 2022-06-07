@@ -10,8 +10,8 @@ const getTodos = () => {
     : '<i class="fa-solid fa-square unchecked-icon"></i>'}
           <input type="text" class=${item.completed === true ? 'decoration edit-todo' : 'edit-todo'}  value="${item.description}">
           <span class="edit-focus-element"></span>
-          <i class="fa-solid fa-trash-can delete-icon"></i>
           <i class="fa-solid fa-ellipsis-vertical more-icon"></i>
+          <i class="fa-solid fa-trash delete-icon" style="color:"orangered"></i>
         </li>`).join('');
   listGroup.innerHTML = todoElement;
   return listGroup;
