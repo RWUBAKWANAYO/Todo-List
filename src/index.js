@@ -45,4 +45,5 @@ window.addEventListener('load', () => {
   getTodos();
   DateConvention();
   document.getElementById('logo').src = logo;
+  document.getElementById('title-bar-logo').href = logo;
 });

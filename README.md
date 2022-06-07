@@ -2,9 +2,9 @@
 
 > In this project, we built a simple HTML list of To Do tasks. This simple web page  built using webpack and served by a webpack dev server.
 
-![Screenshot (1245)](https://user-images.githubusercontent.com/68381641/167101574-1b3be3fb-c11f-428d-a6c5-3a8754450366.png)
-![Screenshot (1246)](https://user-images.githubusercontent.com/68381641/167101563-1f4d1be7-fbb9-4ec4-9701-1329186b584f.png)
-![Screenshot (1247)](https://user-images.githubusercontent.com/68381641/167101576-762955c3-737c-45a5-8ef7-f7c3b9eaff1e.png)
+
+![todo](https://user-images.githubusercontent.com/68381641/172293653-2c45eda8-d0bc-45be-9c36-416d9a320ada.png)
+
 
 ## Built With
 
