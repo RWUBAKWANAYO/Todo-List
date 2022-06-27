@@ -1,6 +1,6 @@
 # Todo-List
 
-> In this project, we built a simple HTML list of To Do tasks. This simple web page  built using webpack and served by a webpack dev server.
+>Microverse Module 02 Project: This is an educational project to make a TodoList web application, where the users can add new todo, remove todo, edit todo, mark todo as completed, and remove all completed todo.
 
 
 ![todo](https://user-images.githubusercontent.com/68381641/172293653-2c45eda8-d0bc-45be-9c36-416d9a320ada.png)
